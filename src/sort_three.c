@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/11 02:41:04 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/11 03:30:26 by lgaume           ###   ########.fr       */
+/*   Created: 2023/11/11 03:24:49 by lgaume            #+#    #+#             */
+/*   Updated: 2023/11/11 03:25:22 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdbool.h>
-
-typedef struct s_stack_node
-{
-	struct s_stacks		*next;
-	struct s_stacks		*prev;
-	struct s_stacks		*target;
-	int					value;
-	int					position;
-	int					push_cost;
-	bool				cheapest;
-	bool				above_median;
-}						t_stack_node;
-
-
-#endif
+/**
+ * 	Make sure that the maximum number is a the bottom
+ * 	If needed, do sa()
+*/
