@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 02:41:52 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/11 05:39:57 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/13 06:32:25 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,3 +19,39 @@
  * 
  * 	rr : Put the top node of A and B at their bottom --> [1][2][3][4] and [5][6][7] becomes [2][3][4][1] and [6][7][5]
 */
+
+static void	rotate(t_stack_node **s)
+{
+	t_stack_node	*last;
+
+	if (!*s || !(*s)->next)
+		return ;
+	last = find_bottom_node(*s);
+	last->next = *s;
+	*s = (*s)->next;
+	(*s)->prev = NULL;
+	last->next->prev = last;
+	last->next->next = NULL;
+}
+
+void	ra(t_stack_node **A, bool print)
+{
+	rotate(A);
+	if (!print)
+		ft_printf("ra\n");
+}
+
+void	rb(t_stack_node **B, bool print)
+{
+	rotate(B);
+	if (!print)
+		ft_printf("rb\n");
+}
+
+void	rr(t_stack_node **A, t_stack_node **B, bool print)
+{
+	rotate(A);
+	rotate(B);
+	if (!print)
+		ft_printf("rr\n");
+}
