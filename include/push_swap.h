@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 02:41:04 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/13 06:29:25 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/13 06:40:32 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@ void			ss(t_stack_node **A, t_stack_node **B, bool print);
 void			ra(t_stack_node **A, bool print);
 void			rb(t_stack_node **B, bool print);
 void			rr(t_stack_node **A, t_stack_node **B, bool print);
+void			rra(t_stack_node **A, bool print);
+void			rrb(t_stack_node **B, bool print);
+void			rrr(t_stack_node **A, t_stack_node **B, bool print);
 //**Algorithms**
 
 #endif // PUSH_SWAP_H
