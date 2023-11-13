@@ -6,7 +6,7 @@
 #    By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/11 02:41:59 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/11 06:02:05 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/11 06:23:44 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,11 +30,13 @@ OPERATIONS_DIR		=	$(SRC_DIR)operations/push.c \
 						$(SRC_DIR)operations/rotate.c \
 						$(SRC_DIR)operations/swap.c
 
-STACK_UTILS_DIR		=	$(SRC_DIR)stack_utils/stack_utils.c
+UTILS_DIR			=	$(SRC_DIR)utils/stack_utils.c \
+						$(SRC_DIR)utils/split.c \
+						$(SRC_DIR)utils/stack_init.c
 
 ALGORITHMS_DIR		=	$(SRC_DIR)algorithms/sort_three.c
 
-SRCS 				= $(OPERATIONS_DIR) $(STACK_UTILS_DIR) $(ALGORITHMS_DIR)
+SRCS 				= $(OPERATIONS_DIR) $(UTILS_DIR) $(ALGORITHMS_DIR)
 
 OBJ 				= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
 
