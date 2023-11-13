@@ -6,7 +6,7 @@
 #    By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/11 02:41:59 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/13 19:16:19 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/13 19:26:05 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ OPERATIONS_DIR		=	$(SRC_DIR)operations/push.c \
 
 UTILS_DIR			=	$(SRC_DIR)utils/stack_utils.c \
 						$(SRC_DIR)utils/stack_utils2.c \
-						$(SRC_DIR)utils/split.c
+						$(SRC_DIR)utils/split.c \
+						$(SRC_DIR)utils/frees.c
 
 ALGORITHMS_DIR		=	$(SRC_DIR)algorithms/sort_three.c
 
