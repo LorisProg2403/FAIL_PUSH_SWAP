@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 02:41:04 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/13 06:09:06 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/13 06:12:55 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,9 @@ char			**split(char *s, char c);
 //**Operations**
 void			pa(t_stack_node **a, t_stack_node **b, bool print);
 void			pb(t_stack_node **a, t_stack_node **b, bool print);
+void			sa(t_stack_node **A, bool print);
+void			sb(t_stack_node **B, bool print);
+void			ss(t_stack_node **A, t_stack_node **B, bool print);
 //**Algorithms**
 
 #endif // PUSH_SWAP_H
