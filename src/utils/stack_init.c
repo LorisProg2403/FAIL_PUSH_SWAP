@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 06:23:55 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/11 06:24:55 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/13 14:34:50 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	init_stack_a(t_stack_node **a, char **av)
 {
-	long	n;
+	/*long	n;
 	int		i;
 
 	i = 0;
 	while (av[i])
 	{
 		if ()
-	}
+	}*/
 }
