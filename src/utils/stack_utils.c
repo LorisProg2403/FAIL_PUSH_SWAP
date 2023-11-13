@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 05:40:04 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/13 06:46:22 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/13 13:06:50 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,20 @@ int	stack_len(t_stack_node *s)
 		len++;
 	}
 	return (len);
+}
+
+t_stack_node	*find_max(t_stack_node *s)
+{
+	t_stack_node	*max;
+
+	if (!s)
+		return (NULL);
+	max = s;
+	while (s)
+	{
+		if (max->value < s->value)
+			max = s;
+		s = s->next;
+	}
+	return (max);
 }
