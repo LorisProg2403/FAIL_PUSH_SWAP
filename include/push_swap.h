@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 02:41:04 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/11 06:08:18 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/13 06:09:06 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,29 @@
 
 typedef struct s_stack_node
 {
-	struct s_stacks		*next;
-	struct s_stacks		*prev;
-	struct s_stacks		*target;
-	int					value;
-	int					position;
-	int					push_cost;
-	bool				cheapest;
-	bool				above_median;
+	int						value;
+	int						position;
+	int						push_cost;
+	bool					cheapest;
+	bool					above_median;
+	struct s_stack_node		*next;
+	struct s_stack_node		*prev;
+	struct s_stack_node		*target;
 }	t_stack_node;
 
-//Handle errors
+//**Handle errors**
 
-//Stack initialisation
+//**Stack initialisation**
 
-//Nodes initialisation
+//**Nodes initialisation**
 
-//Utils
-char	**split(char *s, char c);
-//Commands
+//**Utils**
+char			**split(char *s, char c);
+//t_stack_node	*find_top_node(t_stack_node *stack);
 
-//Algorithms
+//**Operations**
+void			pa(t_stack_node **a, t_stack_node **b, bool print);
+void			pb(t_stack_node **a, t_stack_node **b, bool print);
+//**Algorithms**
 
-#endif
+#endif // PUSH_SWAP_H
