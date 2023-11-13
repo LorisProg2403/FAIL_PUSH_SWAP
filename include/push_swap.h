@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 02:41:04 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/13 14:36:54 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/13 19:21:38 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_stack_node
 //**Handle errors**
 
 //**Stack initialisation**
-
+void			init_stack_a(t_stack_node **a, char **av);
 //**Nodes initialisation**
 
 //**Utils**
@@ -43,6 +43,8 @@ bool			stack_sorted(t_stack_node *s);
 int				stack_len(t_stack_node *s);
 t_stack_node	*find_max(t_stack_node *s);
 t_stack_node	*find_min(t_stack_node *s);
+t_stack_node	*get_cheapest(t_stack_node *s);
+void			prep_for_push(t_stack_node **s, t_stack_node *top, char name);
 
 //**Operations**
 void			pa(t_stack_node **a, t_stack_node **b, bool print);
