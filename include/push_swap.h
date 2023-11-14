@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 02:41:04 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/13 19:25:44 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/14 08:42:09 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ typedef struct s_stack_node
 //**Handle errors**
 void			free_errors(t_stack_node **s);
 void			free_stack(t_stack_node **s);
+int				error_synthax(char *str);
+int				error_duplicate(t_stack_node *s, int n);
 
 //**Stack initialisation**
 void			init_stack_a(t_stack_node **a, char **av);

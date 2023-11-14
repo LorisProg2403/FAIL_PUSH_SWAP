@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 02:41:30 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/11 06:06:25 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/14 08:35:57 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ int	main(int ac, char **av)
 		else
 			sort_stacks(&a, &b);
 	}
-	//free_stack(&a);
+	free_stack(&a);
 	return (0);
 }
