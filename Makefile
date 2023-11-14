@@ -6,7 +6,7 @@
 #    By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/11 02:41:59 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/14 22:03:15 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/14 22:03:42 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ STACKS_DIR			=	$(SRC_DIR)stacks/stack_init.c \
 						$(SRC_DIR)stacks/init_a_to_b.c \
 						$(SRC_DIR)stacks/init_b_to_a.c 
 
-SRC_DIR				=	$(SRC_DIR)main.c
+SRCS_DIR			=	$(SRC_DIR)main.c
 
 SRCS 				= $(OPERATIONS_DIR) $(UTILS_DIR) $(ALGORITHMS_DIR) $(ERRORS_DIR) $(STACKS_DIR)	$(SRCS_DIR)
 
