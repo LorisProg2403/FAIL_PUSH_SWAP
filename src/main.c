@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 02:41:30 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/14 22:22:56 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/14 22:24:05 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int ac, char **av)
 		return (1);
 	else if (ac == 2)
 		av = split(av[1], ' ');
-	init_stack_a(&a, av[1]);
+	init_stack_a(&a, av + 1);
 	if (!stack_sorted(a))
 	{
 		if (stack_len(a) == 2)
