@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 06:23:55 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/13 17:54:56 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/14 22:08:20 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	init_stack_a(t_stack_node **a, char **av)
 		n = ft_atoi(av[i]);
 		if (n > INT_MAX || n < INT_MIN)
 			free_errors(a);
-		if (error_duplicate(*a, (int)n));
+		if (error_duplicate(*a, (int)n))
 			free_errors(a);
 		append_node(a, (int)n);
 		i++;

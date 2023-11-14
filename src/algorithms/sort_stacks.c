@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 08:47:02 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/14 22:01:15 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/14 22:07:46 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@ static void	rotate_both(t_stack_node **a, t_stack_node **b,
 	{
 		while (*b != cheapest_node->target && *a != cheapest_node)
 			rr(a, b, false);
-		current_index(*a);
-		current_index(*b);
+		current_position(*a);
+		current_position(*b);
 	}
 	else
 	{
 		while (*b != cheapest_node->target && *a != cheapest_node)
 			rrr(a, b, false);
-		current_index(*a);
-		current_index(*b);
+		current_position(*a);
+		current_position(*b);
 	}
 }
 
@@ -83,6 +83,6 @@ void	sort_stacks(t_stack_node **a, t_stack_node **b)
 		init_nodes_b(*a, *b);
 		move_b_to_a(a, b);
 	}
-	current_index(*a);
+	current_position(*a);
 	min_on_top(a);
 }

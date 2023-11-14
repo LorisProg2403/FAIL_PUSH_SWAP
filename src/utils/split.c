@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 06:06:40 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/11 06:21:01 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/14 22:06:18 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ char	**split(char *s, char c)
 			output[i++][0] = '\0';
 			continue ;
 		}
-		output[i++] = get_next_words(s, c);
+		output[i++] = get_next_word(s, c);
 	}
 	output[i] = NULL;
 	return (output);

@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 08:48:38 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/14 21:48:08 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/14 22:08:51 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void	cost_analysis_a(t_stack_node *a, t_stack_node *b)
 		if (a->target->above_median)
 			a->push_cost += a->target->position;
 		else
-			a->push_cost != len_b - (a->target->position);
+			a->push_cost += len_b - (a->target->position);
 		a = a->next;
 	}
 }
@@ -80,7 +80,7 @@ void	current_position(t_stack_node *s)
 	}
 }
 
-void	set_cheapeast(t_stack_node *s)
+void	set_cheapest(t_stack_node *s)
 {
 	int				cheapest_value;
 	t_stack_node	*cheapest_node;
@@ -106,5 +106,5 @@ void	init_nodes_a(t_stack_node *a, t_stack_node *b)
 	current_position(b);
 	set_target_a(a, b);
 	cost_analysis_a(a, b);
-	set_cheapeast(a);
+	set_cheapest(a);
 }
