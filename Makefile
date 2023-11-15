@@ -6,7 +6,7 @@
 #    By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/11 02:41:59 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/15 15:35:48 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/15 15:44:52 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ RM = rm -f
 
 
 # Directories
-LIBFT				= ./libft/libftprintf.a
+LIBFT				= ./libft/libft.a
 INC					= include/
 SRC_DIR				= src/
 OBJ_DIR				= obj/
