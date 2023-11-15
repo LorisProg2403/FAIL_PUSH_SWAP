@@ -6,7 +6,7 @@
 #    By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/11 02:41:59 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/15 19:00:48 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/15 19:03:23 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,15 +36,17 @@ UTILS_DIR			=	$(SRC_DIR)utils/stack_utils.c \
 						$(SRC_DIR)utils/frees.c
 
 ALGORITHMS_DIR		=	$(SRC_DIR)algorithms/sort_three.c \
-						$(SRC_DIR)algorithms/sort_stacks.c \
-						$(SRC_DIR)algorithms/handle_errors.c \
-						$(SRC_DIR)algorithms/main.c
+						$(SRC_DIR)algorithms/sort_stacks.c 
 
 STACKS_DIR			=	$(SRC_DIR)stacks/stack_init.c \
 						$(SRC_DIR)stacks/init_a_to_b.c \
-						$(SRC_DIR)stacks/init_b_to_a.c 
+						$(SRC_DIR)stacks/init_b_to_a.c
+						
+ERRORS_DIR			=	$(SRC_DIR)errors/handle_errors.c
+						
+SRCS_DIR			=	$(SRC_DIR)main.c
 
-SRCS 				= $(OPERATIONS_DIR) $(UTILS_DIR) $(ALGORITHMS_DIR) $(ERRORS_DIR) $(STACKS_DIR)
+SRCS 				= $(OPERATIONS_DIR) $(UTILS_DIR) $(ALGORITHMS_DIR) $(ERRORS_DIR) $(STACKS_DIR) $(SRCS_DIR)
 
 OBJ 				= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
 

@@ -6,11 +6,11 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 02:41:30 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/15 18:52:36 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/15 19:03:38 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "../include/push_swap.h"
 
 int	main(int ac, char **av)
 {
