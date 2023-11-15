@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 08:48:38 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/14 22:22:02 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/15 16:06:52 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	set_target_a(t_stack_node *a, t_stack_node *b)
 
 	while (a)
 	{
-		best_match_index = LONG_MIN; //might need to use a LONG
+		best_match_index = LONG_MIN;
 		current_b = b;
 		while (current_b)
 		{
@@ -63,10 +63,10 @@ void	current_position(t_stack_node *s)
 {
 	int	i;
 	int	median;
-	
+
 	i = 0;
 	if (!s)
-		return;
+		return ;
 	median = stack_len(s) / 2;
 	while (s)
 	{
@@ -76,18 +76,18 @@ void	current_position(t_stack_node *s)
 		else
 			s->above_median = false;
 		s = s->next;
-		i++;
+		++i;
 	}
 }
 
 void	set_cheapest(t_stack_node *s)
 {
-	int				cheapest_value;
+	long			cheapest_value;
 	t_stack_node	*cheapest_node;
 	
 	if (!s)
 		return ;
-	cheapest_value = INT_MAX;
+	cheapest_value = LONG_MAX;
 	while (s)
 	{
 		if (s->push_cost < cheapest_value)

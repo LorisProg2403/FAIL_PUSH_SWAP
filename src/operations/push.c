@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 02:41:45 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/15 15:03:38 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/15 18:44:46 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	push(t_stack_node **dst, t_stack_node **src)
 {
 	t_stack_node	*push_node;
 	
-	if (!src)
+	if (!*src)
 		return ;
 	push_node = *src;
 	*src = (*src)->next;
@@ -45,16 +45,16 @@ static void	push(t_stack_node **dst, t_stack_node **src)
 	}
 }
 
-void	pa(t_stack_node **A, t_stack_node **B, bool print)
+void	pa(t_stack_node **a, t_stack_node **b, bool print)
 {
-	push(A, B);
+	push(a, b);
 	if (!print)
 		ft_printf("pa\n");
 }
 
-void	pb(t_stack_node **A, t_stack_node **B, bool print)
+void	pb(t_stack_node **a, t_stack_node **b, bool print)
 {
-	push(B, A);
+	push(b, a);
 	if (!print)
 		ft_printf("pb\n");
 }

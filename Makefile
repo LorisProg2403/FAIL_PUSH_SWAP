@@ -6,7 +6,7 @@
 #    By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/11 02:41:59 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/15 15:44:52 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/15 19:00:48 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 
 # Compiler
 CC = gcc 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -I
 RM = rm -f
 
 
@@ -36,35 +36,31 @@ UTILS_DIR			=	$(SRC_DIR)utils/stack_utils.c \
 						$(SRC_DIR)utils/frees.c
 
 ALGORITHMS_DIR		=	$(SRC_DIR)algorithms/sort_three.c \
-						$(SRC_DIR)algorithms/sort_stacks.c
-
-ERRORS_DIR			=	$(SRC_DIR)errors/handle_errors.c 
+						$(SRC_DIR)algorithms/sort_stacks.c \
+						$(SRC_DIR)algorithms/handle_errors.c \
+						$(SRC_DIR)algorithms/main.c
 
 STACKS_DIR			=	$(SRC_DIR)stacks/stack_init.c \
 						$(SRC_DIR)stacks/init_a_to_b.c \
 						$(SRC_DIR)stacks/init_b_to_a.c 
 
-SRCS_DIR			=	$(SRC_DIR)main.c
-
-SRCS 				= $(OPERATIONS_DIR) $(UTILS_DIR) $(ALGORITHMS_DIR) $(ERRORS_DIR) $(STACKS_DIR) $(SRCS_DIR)
+SRCS 				= $(OPERATIONS_DIR) $(UTILS_DIR) $(ALGORITHMS_DIR) $(ERRORS_DIR) $(STACKS_DIR)
 
 OBJ 				= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
 
 # Rules
 $(LIBFT) :	
 					@make -C ./libft	
-
-start :				@make all
-
+					
 all : 				$(NAME)
 
 $(NAME) :			$(OBJ) $(LIBFT)
-					@$(CC) $(FLAGS) -I $(INC) $(OBJ) $(LIBFT) -o $(NAME)
+					@$(CC) $(FLAGS) $(INC) $(OBJ) $(LIBFT) -o $(NAME)
 
 ## Compile object files from source files
 $(OBJ_DIR)%.o:		$(SRC_DIR)%.c 
 					@mkdir -p $(@D)
-					@$(CC) $(CFLAGS) $(INC) -c $< -o $@
+					@$(CC) $(FLAGS) $(INC) -c $< -o $@
 
 clean:
 					@$(RM) -r $(OBJ_DIR)
@@ -76,4 +72,4 @@ fclean: 			clean
 
 re :				fclean all
 
-.PHONY :			all re clean fclean start
+.PHONY :			all re clean fclean
