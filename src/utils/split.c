@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 06:06:40 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/14 22:06:18 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/15 15:22:06 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,19 @@ static int	count_words(char *s, char c)
 	while (*s)
 	{
 		inside_word = false;
-		while (*s ==c)
+		while (*s == c)
 			++s;
 		while (*s != c && *s)
 		{
 			if (!inside_word)
 			{
-				count++;
+				++count;
 				inside_word = true;
 			}
 			++s;
 		}
 	}
-	return (0);
+	return (count);
 }
 
 static char	*get_next_word(char *s, char c)
@@ -47,12 +47,12 @@ static char	*get_next_word(char *s, char c)
 	i = 0;
 	while (s[cursor] == c)
 		++cursor;
-	while ((s[cursor + len]) != c && s[cursor + len])
+	while ((s[cursor + len] != c) && s[cursor + len])
 		++len;
-	next_word = malloc(sizeof(char) * (len + 1));
+	next_word = malloc((size_t)len * sizeof(char) + 1);
 	if (!next_word)
 		return (NULL);
-	while ((s[cursor]) != c && s[cursor])
+	while ((s[cursor] != c) && s[cursor])
 		next_word[i++] = s[cursor++];
 	next_word[i] = '\0';
 	return (next_word);
@@ -65,10 +65,10 @@ char	**split(char *s, char c)
 	int		i;
 	
 	i = 0;
-	words_count= count_words(s, c);
+	words_count = count_words(s, c);
 	if (!words_count)
 		exit(1);
-	output = malloc(sizeof(char *) * (words_count + 2));
+	output = malloc(sizeof(char *) * (size_t)(words_count + 2));
 	if (!output)
 		return (NULL);
 	while (words_count-- >= 0)

@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 08:47:02 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/14 22:25:18 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/15 15:11:33 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,12 @@
 static void	rotate_both(t_stack_node **a, t_stack_node **b, 
 					t_stack_node *cheapest_node, bool is_rev)
 {
-	if (!is_rev)
+	while (*b != cheapest_node->target && *a != cheapest_node)
 	{
-		while (*b != cheapest_node->target && *a != cheapest_node)
-			rr(a, b, false);
-		current_position(*a);
-		current_position(*b);
-	}
-	else
-	{
-		while (*b != cheapest_node->target && *a != cheapest_node)
+		if (is_rev)
 			rrr(a, b, false);
+		else
+			rr(a, b, false);
 		current_position(*a);
 		current_position(*b);
 	}
@@ -38,7 +33,7 @@ static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 	cheapest = get_cheapest(*a);
 	if (cheapest->above_median && cheapest->target->above_median)
 		rotate_both(a, b, cheapest, false);
-	else if (!(cheapest->above_median) && (!cheapest->target->above_median))
+	else if (!(cheapest->above_median) && !(cheapest->target->above_median))
 		rotate_both(a, b, cheapest, true);
 	//rotate_both(a, b, cheapest, !(cheapest->above_median && cheapest->target->above_median));
 	prep_for_push(a, cheapest, 'a');

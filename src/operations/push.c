@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 02:41:45 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/13 06:08:33 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/15 15:03:38 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	push(t_stack_node **dst, t_stack_node **src)
 	
 	if (!src)
 		return ;
-	push_node = src;
+	push_node = *src;
 	*src = (*src)->next;
 	if (*src)
 		(*src)->prev = NULL;

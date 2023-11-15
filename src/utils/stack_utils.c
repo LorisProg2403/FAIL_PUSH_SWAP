@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 05:40:04 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/13 14:36:36 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/15 15:26:51 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 t_stack_node	*find_bottom_node(t_stack_node *s)
 {
+	if (!s)
+		return (NULL);
 	while (s->next)
 		s = s->next;
 	return (s);
@@ -36,6 +38,8 @@ int	stack_len(t_stack_node *s)
 {
 	int	len;
 	
+	if (!s)
+		return (0);
 	len = 0;
 	while (s)
 	{
@@ -47,32 +51,41 @@ int	stack_len(t_stack_node *s)
 
 t_stack_node	*find_max(t_stack_node *s)
 {
-	t_stack_node	*max;
-
+	long			max;
+	t_stack_node	*max_node;
+	
 	if (!s)
 		return (NULL);
-	max = s;
+	max = LONG_MIN;
 	while (s)
 	{
-		if (max->value < s->value)
-			max = s;
+		if (s->value > max)
+		{
+			max = s->value;
+			max_node = s;
+		}
 		s = s->next;
 	}
-	return (max);
+	return (max_node);
+	
 }
 
 t_stack_node	*find_min(t_stack_node *s)
 {
-	t_stack_node	*min;
+	long			min;
+	t_stack_node	*min_node;
 	
 	if (!s)
 		return (NULL);
-	min = s;
+	min = LONG_MAX;
 	while (s)
 	{
-		if (min->value > s->value)
-			min = s;
+		if (s->value < min)
+		{
+			min = s->value;
+			min_node = s;
+		}
 		s = s->next;
 	}
-	return (min);
+	return (min_node);
 }

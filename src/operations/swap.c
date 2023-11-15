@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 02:41:56 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/13 06:23:07 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/15 15:07:30 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,28 +24,15 @@
 
 static void	swap(t_stack_node **s)
 {
-	t_stack_node	*top;
-	t_stack_node	*second;
-
-	if (!*s || !(*s)->next)
+	if (!*s || (*s)->next)
 		return ;
-	/**s = (*s)->next;
+	*s = (*s)->next;
 	(*s)->prev->prev = *s;
 	(*s)->prev->next = (*s)->next;
 	if ((*s)->next)
 		(*s)->next->prev = (*s)->prev;
 	(*s)->next = (*s)->prev;
-	(*s)->prev = NULL;*/
-	top = (*s)->next;
-	second = (*s);
-	top->prev = NULL;
-	top->next = second;
-	second->prev = top;
-	if (!(*s)->next->next)
-		second->next = (*s)->next->next;
-	else
-		second->next = NULL;
-	*s = top;
+	(*s)->prev = NULL;
 }
 
 void	sa(t_stack_node **A, bool print)

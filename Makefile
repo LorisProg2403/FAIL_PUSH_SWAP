@@ -6,7 +6,7 @@
 #    By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/11 02:41:59 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/14 22:03:42 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/15 15:35:48 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,13 +46,15 @@ STACKS_DIR			=	$(SRC_DIR)stacks/stack_init.c \
 
 SRCS_DIR			=	$(SRC_DIR)main.c
 
-SRCS 				= $(OPERATIONS_DIR) $(UTILS_DIR) $(ALGORITHMS_DIR) $(ERRORS_DIR) $(STACKS_DIR)	$(SRCS_DIR)
+SRCS 				= $(OPERATIONS_DIR) $(UTILS_DIR) $(ALGORITHMS_DIR) $(ERRORS_DIR) $(STACKS_DIR) $(SRCS_DIR)
 
 OBJ 				= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
 
 # Rules
 $(LIBFT) :	
 					@make -C ./libft	
+
+start :				@make all
 
 all : 				$(NAME)
 
@@ -74,4 +76,4 @@ fclean: 			clean
 
 re :				fclean all
 
-.PHONY :			all re clean fclean
+.PHONY :			all re clean fclean start
