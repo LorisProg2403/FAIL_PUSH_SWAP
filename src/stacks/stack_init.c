@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 06:23:55 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/15 15:37:33 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/15 19:45:11 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 static long	ft_atolong(const char *s)
 {
-	long	res;
+	long	result;
 	int		sign;
 
-	res = 0;
-	sign = 1;
-	while (ft_isspace(*s))
+	result = 0;
+	sign = 1; 
+	while (*s == ' ' || *s == '\t' || *s == '\n' || \
+			*s == '\r' || *s == '\f' || *s == '\v')
 		s++;
 	if (*s == '-' || *s == '+')
 	{
@@ -28,8 +29,8 @@ static long	ft_atolong(const char *s)
 		s++;
 	}
 	while (ft_isdigit(*s))
-		res = res * 10 + (*s++ - '0');
-	return (res * sign);
+		result = result * 10 + (*s++ - '0');
+	return (result * sign);
 }
 
 static void	append_node(t_stack_node **s, int n)

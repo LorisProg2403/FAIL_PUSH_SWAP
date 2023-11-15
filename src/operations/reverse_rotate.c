@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 02:41:49 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/13 06:40:08 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/15 19:07:07 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	r_rotate(t_stack_node **s)
 {
 	t_stack_node	*last;
 
-	if (!*s || (*s)->next)
+	if (!*s || !(*s)->next)
 		return ;
 	last = find_bottom_node(*s);
 	last->prev->next = NULL;
@@ -34,24 +34,24 @@ static void	r_rotate(t_stack_node **s)
 	last->next->prev = last; //changin the old *s prev
 }
 
-void	rra(t_stack_node **A, bool print)
+void	rra(t_stack_node **a, bool print)
 {
-	r_rotate(A);
+	r_rotate(a);
 	if (!print)
 		ft_printf("rra\n");
 }
 
-void	rrb(t_stack_node **B, bool print)
+void	rrb(t_stack_node **b, bool print)
 {
-	r_rotate(B);
+	r_rotate(b);
 	if (!print)
 		ft_printf("rrb\n");
 }
 
-void	rrr(t_stack_node **A, t_stack_node **B, bool print)
+void	rrr(t_stack_node **a, t_stack_node **b, bool print)
 {
-	r_rotate(A);
-	r_rotate(B);
+	r_rotate(a);
+	r_rotate(b);
 	if (!print)
 		ft_printf("rrr\n");
 }

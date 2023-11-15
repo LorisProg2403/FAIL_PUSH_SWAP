@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 02:41:45 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/15 18:44:46 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/15 22:11:01 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	pa(t_stack_node **a, t_stack_node **b, bool print)
 		ft_printf("pa\n");
 }
 
-void	pb(t_stack_node **a, t_stack_node **b, bool print)
+void	pb(t_stack_node **b, t_stack_node **a, bool print)
 {
 	push(b, a);
 	if (!print)

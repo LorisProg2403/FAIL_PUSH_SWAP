@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 05:40:04 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/15 15:26:51 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/15 21:39:45 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,43 +49,42 @@ int	stack_len(t_stack_node *s)
 	return (len);
 }
 
-t_stack_node	*find_max(t_stack_node *s)
-{
-	long			max;
-	t_stack_node	*max_node;
-	
-	if (!s)
-		return (NULL);
-	max = LONG_MIN;
-	while (s)
-	{
-		if (s->value > max)
-		{
-			max = s->value;
-			max_node = s;
-		}
-		s = s->next;
-	}
-	return (max_node);
-	
-}
-
-t_stack_node	*find_min(t_stack_node *s)
+t_stack_node	*find_min(t_stack_node *stack)
 {
 	long			min;
 	t_stack_node	*min_node;
-	
-	if (!s)
+
+	if (!stack)
 		return (NULL);
 	min = LONG_MAX;
-	while (s)
+	while (stack)
 	{
-		if (s->value < min)
+		if (stack->value < min)
 		{
-			min = s->value;
-			min_node = s;
+			min = stack->value;
+			min_node = stack;
 		}
-		s = s->next;
+		stack = stack->next;
 	}
-	return (min_node);
+	return (min_node); 
+}
+
+t_stack_node	*find_max(t_stack_node *stack)
+{
+	long			max;
+	t_stack_node	*max_node;
+
+	if (!stack)
+		return (NULL);
+	max = LONG_MIN;
+	while (stack)
+	{
+		if (stack->value > max)
+		{
+			max = stack->value;
+			max_node = stack;
+		}
+		stack = stack->next;
+	}
+	return (max_node);
 }
